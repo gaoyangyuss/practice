@@ -1,0 +1,18 @@
+{
+  "name": "triangle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gyy",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.5.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-watch": "^5.0.0"
+  }
+}

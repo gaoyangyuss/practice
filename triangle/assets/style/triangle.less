@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors ${author} (${email})
+ * @date    2018-06-12
+ * @version $Id$
+ */
+
+.clearfix(){
+	zoom:1;
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+.triangle-wrapper{
+	.clearfix();
+}
+
+.triangle(top, @color:#3f51b5, @width:16px){
+	border-width: @width;
+	border-color: @color transparent transparent transparent;
+	border-style: solid dashed dashed dashed;
+}
+
+.triangle(right, @color:#3f51b5, @width:16px){
+	border-width: @width;
+	border-color: transparent @color transparent transparent;
+	border-style: dashed solid dashed dashed;
+}
+
+.triangle(bottom, @color:#3f51b5, @width:16px){
+	border-width: @width;
+	border-color: transparent transparent @color transparent;
+	border-style: dashed dashed solid dashed;
+}
+
+.triangle(left, @color:#3f51b5, @width:16px){
+	border-width: @width;
+	border-color: transparent transparent transparent @color;
+	border-style: dashed dashed dashed solid;
+}
+
+.triangle(@_, @color:#3f51b5, @width:16px){
+	margin: 10px;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	float: left;
+}
+
+.triangle-top{
+	.triangle(top)
+}
+
+.triangle-right{
+	.triangle(right,#00bcd4,14px)
+}
+
+.triangle-bottom{
+	.triangle(bottom,#4caf50,12px)
+}
+
+.triangle-left{
+	.triangle(left,#ff9800,10px)
+}
+

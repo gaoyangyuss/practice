@@ -1,0 +1,126 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-06-20 15:55:01
+ * @version $Id$
+ */
+*{
+	margin:0;
+	padding: 0; 
+}
+
+.width(@width: 20%) {
+  	width: -moz-calc(@width~" - 0.625rem * 2 - 1px * 2");
+	width: -webkit-calc(@width~" - 0.625rem * 2 - 1px * 2");
+	width: calc(@width~" - 0.625rem * 2 - 1px * 2");
+}
+
+/*1280分辨率以上（大于1200px）*/
+@media screen and (min-width:1200px) {
+  html {
+    font-size: 21px;
+  }
+
+  .group2 {
+	.box {
+		.width(20%);
+	}
+  }
+}
+
+/*1100分辨率（大于960px,小于1199px）*/
+@media screen and (min-width:960px) and (max-width:1199px) {
+  html {
+    font-size: 18px;
+  }
+
+  .group2 {
+	.box {
+		.width(25%);
+	}
+  }
+}
+
+/*880分辨率（大于768px,小于959px）*/
+@media screen and (min-width:768px) and (max-width:959px) {
+  html {
+    font-size: 16px;
+  }
+
+  .group2 {
+	.box {
+		.width(33.33%);
+	}
+  }
+}
+
+/*720分辨率（大于480px,小于767px）*/
+@media only screen and (min-width:480px) and (max-width:767px) {
+  html {
+    font-size: 14px;
+  }
+
+  .group2 {
+	.box {
+		.width(50%);
+	}
+  }
+}
+
+/*440分辨率以下（小于479px）*/
+@media only screen and (max-width: 479px) {
+  html {
+    font-size: 12px;
+  }
+
+  .group2 {
+	.box {
+		.width(100%);
+	}
+  }
+}
+
+/*竖屏*/
+/*@media screen and (orientation:portrait) {
+
+}*/
+
+/*竖屏*/
+/*@media screen and (orientation:landscape) {
+	
+}*/
+
+.clearfix(){
+	zoom:1;
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+@color: #7986CB;
+.box {
+ 	float: left;
+ 	margin: 0.625rem;
+ 	border: 1px solid transparent;
+ 	background: @color;
+ 	border-color: @color;
+ 	border-radius: 4px;
+ 	color: #fff;
+ 	font-size: 1rem;
+ 	text-align: center;
+ 	height: 120px;
+}
+
+.group1 {
+	.clearfix();
+	.box {
+		.width();
+	}
+}
+
+.group2 {
+	.clearfix();
+}
